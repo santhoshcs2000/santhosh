@@ -1,0 +1,80 @@
+<!--  jQuery-->  
+  const controls=document.queryselector(".controls");
+  const container=document.queryselector(.thumbnail-container);	
+  const allBox=container.children;
+  const containerwidth=container.offsetwidth;
+  const margin=30;
+  var items=0;
+  var totalItems=0;
+  
+  
+  //items setup per slide
+
+ responsive=[
+  {breakpoint:{width:0,items:1}},//if width greater than 0(1 will item show	)
+  {breakpoint:{width:600,items:2}},//if width greater than 600(2 will item show	)
+  {breakpoint:{width:1000 ,items:4}}//if width greater than 1000(4	 will item show	)
+ ]
+  
+ function load(){
+     for(Let i=0;i<responsive.length;i++){
+	    if(window.innerwidth>responsive[i].breakpoint.width){
+            items=responsive[i].breakpoint.item
+		}
+		
+     }
+	 start();
+ } 
+  
+ function start(){
+     var totalitems width=0
+	for(Let i=0;i<allBox.length;i++){
+	    // width and margin setup of items
+       allBox[i].style.width=containerWidth/items + "px";
+	   allBox[i].style.margin=(margin/2)+ "px";
+	   totalItemsWidth+=containerWidth/items;
+	   totalItems++;
+	}
+	
+	//thumbnail-container width set up
+	container.style.width=totalItemsWidth + "px";
+	
+	//slide controls number set up
+	 const allSlides=math.ceil(totalItems/items);
+	 const ul=document.creatElement("ul");
+	    for(Let i=1;i<=allSlides;i++){
+		  const li=document.creatElement("li");
+		       li.id=i;
+			   li.innerHTML=i;
+			   li.setAtribute("onclick","controlSlide(this)");
+			   ul.appendChiid(ul);
+			   if(i==1){
+			    li.className="active";
+			   }
+	    }
+		controls.appendChiid(ul);
+ }  
+ 
+    //when click on number slide to next slide
+ function
+ 
+ 
+ window.onload=load();
+ 
+ 
+ 
+ 
+ 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 
